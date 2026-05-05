@@ -1,0 +1,404 @@
+/* =============================================
+   VARIABLES Y RESET
+   ============================================= */
+:root {
+    --color-primario: #2563eb;
+    --color-primario-hover: #1d4ed8;
+    --color-secundario: #64748b;
+    --color-exito: #16a34a;
+    --color-error: #dc2626;
+    --color-fondo: #f8fafc;
+    --color-blanco: #ffffff;
+    --color-texto: #1e293b;
+    --color-borde: #e2e8f0;
+    --sombra: 0 1px 3px rgba(0,0,0,0.1);
+    --radio: 8px;
+}
+
+* { margin: 1; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: var(--color-fondo);
+    color: var(--color-texto);
+    line-height: 1.6;
+}
+
+/* =============================================
+   NAVEGACIÓN
+   ============================================= */
+.navbar {
+    background: var(--color-blanco);
+    border-bottom: 1px solid var(--color-borde);
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 64px;
+    box-shadow: var(--sombra);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav-brand a {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--color-primario);
+    text-decoration: none;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--color-secundario);
+    padding: 0.4rem 0.8rem;
+    border-radius: var(--radio);
+    transition: all 0.2s;
+    font-size: 0.9rem;
+}
+
+.nav-links a.btn-primary {
+    background: #16a34a;
+    color: white;
+    font-weight: 600;
+    padding: 0.45rem 1rem;
+}
+
+.nav-links a.btn-primary:hover {
+    background: #15803d;
+    color: white;
+}
+
+/* =============================================
+   CONTENEDOR PRINCIPAL
+   ============================================= */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2.5rem 1.5rem; /* 1 arriba, 2 izquierda derecha */
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 1.5rem;
+    }
+}
+
+/* =============================================
+   BOTONES
+   ============================================= */
+.btn-primary {
+    background: var(--color-primario);
+    color: white;
+    border: none;
+    padding: 0.6rem 1.4rem;
+    border-radius: var(--radio);
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 0.9rem;
+    transition: background 0.2s;
+}
+.btn-primary:hover { background: var(--color-primario-hover); }
+
+.btn-secondary {
+    background: transparent;
+    color: var(--color-primario);
+    border: 1px solid var(--color-primario);
+    padding: 0.6rem 1.4rem;
+    border-radius: var(--radio);
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 0.9rem;
+    transition: all 0.2s;
+}
+.btn-secondary:hover { background: var(--color-primario); color: white; }
+
+.btn-danger {
+    background: var(--color-error);
+    color: white;
+    border: none;
+    padding: 0.4rem 1rem;
+    border-radius: var(--radio);
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 0.85rem;
+}
+
+.btn-block { display: block; width: 100%; text-align: center; padding: 0.8rem; }
+
+/* =============================================
+   ALERTAS
+   ============================================= */
+.alert {
+    padding: 1rem;
+    border-radius: var(--radio);
+    margin-bottom: 1rem;
+}
+.alert-success { background: #dcfce7; color: #166534; border: 1px solid #bbf7d0; }
+.alert-error { background: #fee2e2; color: #991b1b; border: 1px solid #fecaca; }
+.alert-info { background: #dbeafe; color: #1e40af; border: 1px solid #bfdbfe; }
+
+/* =============================================
+   FORMULARIOS
+   ============================================= */
+.form-group {
+    margin-bottom: 1.2rem;
+}
+.form-group label {
+    display: block;
+    margin-bottom: 0.4rem;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 0.7rem;
+    border: 1px solid var(--color-borde);
+    border-radius: var(--radio);
+    font-size: 0.95rem;
+    transition: border 0.2s;
+    background: white;
+}
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--color-primario);
+    box-shadow: 0 0 0 3px rgba(37,99,235,0.1);
+}
+.form-group input:disabled { background: var(--color-fondo); cursor: not-allowed; }
+
+/* =============================================
+   AUTENTICACIÓN
+   ============================================= */
+.auth-container {
+    max-width: 420px;
+    margin: 3rem auto;
+    background: white;
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+}
+.auth-container h1 { margin-bottom: 1.5rem; font-size: 1.6rem; }
+.auth-link { text-align: center; margin-top: 1rem; font-size: 0.9rem; color: var(--color-secundario); }
+.auth-link a { color: var(--color-primario); }
+
+/* =============================================
+   HERO SECTION
+   ============================================= */
+.hero {
+    text-align: center;
+    padding: 4rem 2rem;
+    background: linear-gradient(135deg, #1e3a8a, #2563eb);
+    color: white;
+    border-radius: 12px;
+    margin-bottom: 3rem;
+}
+.hero h1 { font-size: 2.5rem; margin-bottom: 1rem; }
+.hero p { font-size: 1.1rem; opacity: 0.9; margin-bottom: 2rem; }
+
+/* =============================================
+   CATÁLOGO DE PRODUCTOS
+   ============================================= */
+.catalogo h2 { margin-bottom: 1.5rem; font-size: 1.8rem; }
+
+.filtros { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 2rem; }
+.btn-filtro {
+    padding: 0.4rem 1rem;
+    border: 1px solid var(--color-borde);
+    border-radius: 20px;
+    text-decoration: none;
+    color: var(--color-secundario);
+    font-size: 0.85rem;
+    transition: all 0.2s;
+}
+.btn-filtro:hover, .btn-filtro.activo {
+    background: var(--color-primario);
+    color: white;
+    border-color: var(--color-primario);
+}
+
+.productos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.producto-card {
+    background: white;
+    border: 1px solid var(--color-borde);
+    border-radius: 12px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    transition: box-shadow 0.2s, transform 0.2s;
+}
+.producto-card:hover {
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    transform: translateY(-2px);
+}
+.producto-categoria {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    color: var(--color-primario);
+    font-weight: 600;
+    letter-spacing: 0.05em;
+}
+.producto-card h3 { font-size: 1.1rem; }
+.producto-card p { font-size: 0.9rem; color: var(--color-secundario); flex-grow: 1; }
+.producto-precio { font-size: 1.5rem; font-weight: 700; color: var(--color-primario); }
+
+/* =============================================
+   TABLAS
+   ============================================= */
+.tabla-datos, .tabla-carrito {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--sombra);
+}
+.tabla-datos th, .tabla-carrito th {
+    background: #f1f5f9;
+    padding: 0.8rem 1rem;
+    text-align: left;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-secundario);
+}
+.tabla-datos td, .tabla-carrito td {
+    padding: 0.9rem 1rem;
+    border-top: 1px solid var(--color-borde);
+    font-size: 0.95rem;
+}
+.tabla-datos tr:hover td { background: #f8fafc; }
+
+/* =============================================
+   BADGE DE ESTADO
+   ============================================= */
+.badge {
+    padding: 0.25rem 0.7rem;
+    border-radius: 20px;
+    font-size: 0.78rem;
+    font-weight: 600;
+}
+.badge-pendiente { background: #fef3c7; color: #92400e; }
+.badge-pagado { background: #dcfce7; color: #166534; }
+.badge-cancelado { background: #fee2e2; color: #991b1b; }
+.badge-procesando { background: #dbeafe; color: #1e40af; }
+
+/* =============================================
+   PANEL DE ADMINISTRACIÓN
+   ============================================= */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+.stat-card {
+    background: white;
+    border: 1px solid var(--color-borde);
+    border-radius: 12px;
+    padding: 1.5rem;
+    text-align: center;
+}
+.stat-number { font-size: 2.2rem; font-weight: 700; color: var(--color-primario); }
+.stat-label { font-size: 0.9rem; color: var(--color-secundario); margin-top: 0.3rem; }
+
+.admin-nav {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+.admin-link {
+    background: white;
+    border: 1px solid var(--color-borde);
+    border-radius: 12px;
+    padding: 1.5rem;
+    text-align: center;
+    text-decoration: none;
+    color: var(--color-texto);
+    font-weight: 600;
+    transition: all 0.2s;
+}
+.admin-link:hover {
+    border-color: var(--color-primario);
+    background: #eff6ff;
+    color: var(--color-primario);
+}
+
+.admin-form {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    border: 1px solid var(--color-borde);
+    margin-bottom: 2rem;
+}
+
+/* =============================================
+   CHECKOUT
+   ============================================= */
+.checkout-container { max-width: 600px; margin: 0 auto; }
+.resumen-pedido {
+    background: white;
+    border: 1px solid var(--color-borde);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+.total-final { font-size: 1.3rem; margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--color-borde); }
+.metodos-pago { display: flex; flex-direction: column; gap: 0.8rem; margin: 1rem 0; }
+.metodos-pago label { display: flex; align-items: center; gap: 0.5rem; padding: 1rem; border: 1px solid var(--color-borde); border-radius: var(--radio); cursor: pointer; }
+.metodos-pago label:hover { border-color: var(--color-primario); background: #eff6ff; }
+.aviso-simulado { font-size: 0.85rem; color: var(--color-secundario); margin-bottom: 1rem; }
+
+/* =============================================
+   CARRITO
+   ============================================= */
+.carrito-acciones { display: flex; gap: 1rem; justify-content: flex-end; margin-top: 1rem; }
+
+/* =============================================
+   PERFIL
+   ============================================= */
+.perfil-container { max-width: 500px; margin: 0 auto; }
+
+/* =============================================
+   FOOTER
+   ============================================= */
+.footer {
+    text-align: center;
+    padding: 2rem;
+    border-top: 1px solid var(--color-borde);
+    color: var(--color-secundario);
+    font-size: 0.9rem;
+    margin-top: 4rem;
+}
+
+/* =============================================
+   RESPONSIVE BÁSICO
+   ============================================= */
+@media (max-width: 768px) {
+    .navbar { padding: 0 1rem; }
+    .nav-links { gap: 0.5rem; }
+    .nav-links a { font-size: 0.8rem; padding: 0.3rem 0.5rem; }
+    .container { padding: 1rem; }
+    .productos-grid { grid-template-columns: 1fr; }
+    .stats-grid { grid-template-columns: repeat(2, 1fr); }
+}
