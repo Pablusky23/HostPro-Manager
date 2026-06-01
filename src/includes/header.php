@@ -36,4 +36,4 @@ require_once __DIR__ . '/auth.php';
     </ul>
 </nav>
 
-<main class="container"></main>
+<main class="container">
