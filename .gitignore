@@ -1,42 +1,65 @@
-# PHP dependencies
-/vendor/
+# Docker 
+docker-compose.override.yml
+.docker/
+docker-compose.prod.yml
 
-# Composer files
-/composer.phar
-
-# Environment files
+# Variables de entorno y secretos
 .env
-.env.local
-.env.*.local
+.env.*
+!.env.example
+*.env
 
-# Logs and cache
+# Base de datos
+mysql/data/
+mysql/*.log
+*.sql.bak
+*.dump
+
+# PHP / Dependencias
+vendor/
+composer.lock
+
+# Configuración local sensible
+src/config/db.php
+src/config/db.local.php
+
+# Logs
 *.log
-cache/
 logs/
+error_log
+php_errors.log
 
-# OS generated files
+# Caché y archivos temporales
+*.cache
+tmp/
+temp/
+.cache/
+src/cache/
+
+# Subidas de usuarios
+src/assets/img/uploads/
+src/assets/uploads/
+uploads/
+
+# Sesiones PHP
+sessions/
+*.sess
+
+# IDEs y editores
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
 .DS_Store
 Thumbs.db
-desktop.ini
 
-# IDE/editor files
-.vscode/
-.idea/
-*.sublime-project
-*.sublime-workspace
-
-# Node modules (if using frontend tooling)
+# Node
 node_modules/
+npm-debug.log*
+yarn-error.log
 
-# Docker and local runtime
-docker-compose.override.yml
-*.env.*
-
-# MySQL data directory (if accidentally stored inside repo)
-mysql/data/
-
-# Build artifacts
+# Backups
 *.bak
-*.tmp
-*.swp
-*.cache
+*.backup
+*.orig
