@@ -1,0 +1,42 @@
+# PHP dependencies
+/vendor/
+
+# Composer files
+/composer.phar
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Logs and cache
+*.log
+cache/
+logs/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE/editor files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Node modules (if using frontend tooling)
+node_modules/
+
+# Docker and local runtime
+docker-compose.override.yml
+*.env.*
+
+# MySQL data directory (if accidentally stored inside repo)
+mysql/data/
+
+# Build artifacts
+*.bak
+*.tmp
+*.swp
+*.cache
